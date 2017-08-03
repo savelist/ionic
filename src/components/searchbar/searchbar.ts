@@ -117,7 +117,7 @@ export class Searchbar extends BaseInput<string> {
   }
 
   /**
-   * @input {boolean} Set the disabled state of the input. Values: `true`, `false`. Default `false`.
+   * @input {boolean} Set input's disabled state. Values: `true`, `false`. Default `false`.
    */
   @Input() disabled: boolean = false;
 
