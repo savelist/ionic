@@ -39,6 +39,7 @@ import { Platform } from '../../platform/platform';
         '[attr.type]="type" ' +
         '[attr.autocomplete]="_autocomplete" ' +
         '[attr.autocorrect]="_autocorrect" ' +
+        '[attr.disabled]="disabled" ' +
         '[attr.spellcheck]="_spellcheck">' +
       '<button ion-button clear class="searchbar-clear-icon" [mode]="_mode" (click)="clearInput($event)" (mousedown)="clearInput($event)" type="button"></button>' +
     '</div>' +
@@ -114,6 +115,11 @@ export class Searchbar extends BaseInput<string> {
   set autocorrect(val: string) {
     this._autocorrect = (val === '' || val === 'on') ? 'on' : this._config.get('autocorrect', 'off');
   }
+
+  /**
+   * @input {boolean} Set the disabled state of the input. Values: `true`, `false`. Default `false`.
+   */
+  @Input() disabled: boolean = false;
 
   /**
    * @input {string|boolean} Set the input's spellcheck property. Values: `true`, `false`. Default `false`.
